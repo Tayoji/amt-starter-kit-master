@@ -1,0 +1,122 @@
+// your style goes here
+
+// 覆盖字体路径变量，以防止编译出错
+// 1.0.0-rc.1 有点小问题，需要手动删掉
+//    node_modules/amazeui-touch/scss/amazeui.touch.scss 中的 `$ratchicons-path: 'fonts/';` 这一行
+// @see https://github.com/jtangelder/sass-loader#problems-with-url
+$ratchicons-path: "../../node_modules/amazeui-touch/fonts/";
+
+@import "~amazeui-touch/scss/amazeui.touch.scss";
+
+/* Container `fade` 动画示例 */
+.view-transition-fade-enter {
+  opacity: 0.01;
+}
+
+.view-transition-fade-enter.view-transition-fade-enter-active {
+  opacity: 1;
+  transition: opacity 450ms ease-in;
+}
+
+.view-transition-fade-leave {
+  opacity: 1;
+}
+
+.view-transition-fade-leave.view-transition-fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+#container{
+  background:#5D78FC;
+  width: 100%;
+  height: 100%;
+  .background{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .body{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    .word{
+      width: calc(100% - 40px);
+      height: auto;
+      margin: 40px 20px 20px 20px;
+    }
+    .inputs{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      div{
+        background-color: white;
+        width: 100%;
+        border-radius: 3px;
+        height: 44px;
+        margin-top: 15px;
+        overflow:hidden;
+        .code{
+          width: 100px;
+          height: 100%;
+          margin: 0px;
+          border: 0px;
+          background-color: rgb(255,184,0);
+          color: white;
+          float: right;
+          font-size: 15px;
+        }
+      }
+      .buttombuts{
+        margin-top: 20px;
+        width: 80%;
+        height: auto;
+        background-color:rgba(0,0,0,0);
+        button{
+          border: 0px;
+          background-color: white;
+          border-radius: 22px;
+          height: 44px;
+          color: rgb(147,241,0);
+          font-size: 20px;
+        }
+        .reg{
+          width: 100%;
+        }
+        div{
+          width: 100%;
+          background-color:rgba(0,0,0,0);
+          display: flex;
+          justify-content:space-between;
+          button{
+            width: calc(50% - 5px);
+            color: white;
+            background-color:rgba(0,0,0,0);
+            border: 1px white solid;
+          }
+        }
+
+      }
+
+      input{
+        border: 0px;
+        height: 30px;
+        margin: 7px;
+        font-size: 15px;
+        width: 100%;
+      }
+
+    }
+    .payicon{
+      height: 30px;
+      width: 140px;
+      bottom: 20px;
+      position: absolute;
+      text-align:center;
+     left: calc(50% - 70px);
+    }
+  };
+}
